@@ -1,0 +1,36 @@
+!!! 5
+html.no-js
+head
+  meta(charset='utf-8')
+    title trek V trek
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width')
+    
+  body(ng-app='App')
+    link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.2.1/base-min.css', type='text/css' )
+    link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.2.1/grids-min.css', type='text/css' )
+    link(rel='stylesheet', href='styles/main.css', type='text/css' )   
+    script(src='bower_components/jquery/jquery.js')
+    script(src='scripts/lib/jquery-ui-custom.js')
+    script(src='bower_components/angular/angular.js')
+    script(src='scripts/app.js')
+    script(src='scripts/directives/SortableList.js')
+    script(src='scripts/controllers/main.js')
+
+    .container(ng-view='')
+    
+    #statusBar
+        .pure-g
+            .pure-u-2-5
+            .pure-u-1-5
+                .pure-g.statusBar
+                    .pure-u-1-2
+                        dl
+                            dt.muted Available
+                            di(ng-repeat="item in items.availableItems")
+                                .item {{item.title}}
+                    .pure-u-1-2
+                        dl
+                            dt.muted Selected
+                            di(ng-repeat="item in items.selectedItems")
+                                .item {{item.title}}
